@@ -11,7 +11,7 @@ Content-Type: application/json
 
 {
     "type": "text/plain",
-    "filename": "test.com.txt"
+    "filename": "malware.test.txt"
 }
 
 
@@ -20,7 +20,14 @@ Content-Type: application/json
 PUT {{protocol}}://{{host}}/media/MediaFiles(3e8c30a1-1ae1-4165-b361-a9d7bf21c4cd)/content
 Content-Type: text/plain
 
-< ./srv/test.com.txt
+< ./srv/malware.test.txt
+
+
+### PUT Request
+PUT {{protocol}}://{{host}}/media/MediaFiles(3e8c30a1-1ae1-4165-b361-a9d7bf21c4cd)/content
+Content-Type: text/plain
+
+< ./srv/test.txt
 
 
 ### GET Request
