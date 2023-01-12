@@ -1,16 +1,16 @@
-# SAP-BTP CAP Demo Use Cases
-This repository include demo use cases built using Cloud Application Programming Model (CAP) and with different BTP Services.
+# SAP BTP CAP Demo Use Cases
+This repository includes demo use cases built using SAP Cloud Application Programming Model (CAP) with different SAP BTP services.
 
 ## Description
-This repository contains different application to showcase multiple features of CAP with BTP Services
+This repository contains different applications to showcase multiple features of CAP with SAP BTP services.
 
 ## **[Demo Use Cases]**
 <br />
 
-### **[UseCase-1] CAP with Fiori Elements: Side Effects, Custom Actions, Dynamic Expressions**
-This use case showcases a demo application using CAP and fiori elements to explain features like Side Effects, Custom Actions, Dynamic Expressions.
+### **[UseCase-1] CAP SAP Fiori Elements: Side Effects, Custom Actions, Dynamic Expressions**
+This use case showcases a demo application using CAP and Fiori elements to explain features like Side Effects, Custom Actions, Dynamic Expressions.
 
-For more info, refer the blog [here](https://blogs.sap.com/2022/12/23/cap-with-fiori-elements-side-effects-custom-actions-dynamic-expressions/) and code base can be found [here](./cap-fe-se-ca-de/)
+For more info, refer the blog [here](https://blogs.sap.com/2022/12/23/cap-with-fiori-elements-side-effects-custom-actions-dynamic-expressions/) and code base can be found [here](./cap-fe-se-ca-de/).
 
 <br />
 <br />
@@ -21,7 +21,7 @@ No known issues.
 
 ## How to obtain support
 [Create an issue](https://github.com/SAP-samples/btp-cap-demo-usecases/issues) in this repository if you find a bug or have questions about the content.
- 
+
 For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
 ## Contributing
