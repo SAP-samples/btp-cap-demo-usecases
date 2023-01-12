@@ -1,0 +1,31 @@
+
+
+# @host = technical-field-enablement-tfe-india-dev-dev-cap-media-srv.cfapps.eu20.hana.ondemand.com
+# @protocol = https
+
+@host = localhost:4004
+@protocol = http
+
+POST {{protocol}}://{{host}}/media/MediaFiles
+Content-Type: application/json
+
+{
+    "type": "text/plain",
+    "filename": "test.com.txt"
+}
+
+
+
+### PUT Request
+PUT {{protocol}}://{{host}}/media/MediaFiles(3e8c30a1-1ae1-4165-b361-a9d7bf21c4cd)/content
+Content-Type: text/plain
+
+< ./srv/test.com.txt
+
+
+### GET Request
+GET {{protocol}}://{{host}}/media/MediaFiles(3e8c30a1-1ae1-4165-b361-a9d7bf21c4cd)/content
+
+
+### Delete Content
+DELETE GET {{protocol}}://{{host}}/media/MediaFiles(b9c0b62c-912f-400c-886b-328d457bfb75)
