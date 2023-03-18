@@ -18,17 +18,16 @@ For more info, refer the blog [here](https://blogs.sap.com/2022/12/23/cap-with-f
 This use case showcases about how to build a CAP application that allows users to upload files and check them for malware using SAP Malware Scanning Service on BTP.**
 
 For more info, refer the blog [here](https://blogs.sap.com/2023/01/14/cap-handling-of-media-data-with-malware-scanning/) and code base can be found [here](./cap-media-malware/).
-
 <br />
 <br />
 
-### _**[UseCase-3] Win Customer Trust using Data Privacy and Protection Services on BTP**_
+### _**[UseCase-3] CAP and DPP: Win Customer Trust using Data Privacy and Protection Services on BTP**_
 This use case showcases about how to integrate a CAP application with Data Protection and privavcy Services like Personal Data Manager.**
 
 For more info, refer the series of blogs:
-- [Part1](https://blogs.sap.com/2023/01/14/cap-handling-of-media-data-with-malware-scanning/) 
-- [Part2]()
-- [Part3]()
+- [Part1: DPP Terminologies and PDM Overview](https://blogs.sap.com/2023/03/18/sapcap-win-customer-trust-using-data-privacy-and-protection-services-on-btp-part-1/) 
+- [Part2: Personal Data Annotations in CAP and Integration with PDM](https://blogs.sap.com/2023/03/18/sapcap-win-customer-trust-using-data-privacy-and-protection-services-on-btp-part-2/)
+- [Part3: Explore PDM Application features](https://blogs.sap.com/2023/03/18/sapcap-win-customer-trust-using-data-privacy-and-protection-services-on-btp-part-3/)
 
 and code base can be found [here](./cap-dpp-example/).
        

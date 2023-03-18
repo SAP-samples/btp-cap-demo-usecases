@@ -2,9 +2,10 @@
 
 This repository is an showcase for CAP application integration with Data Privacy and Protection services like Personal Data Manager Service on BTP. For more info please visit the following series of Blogs.
 
-- [Part1](https://blogs.sap.com/2023/01/14/cap-handling-of-media-data-with-malware-scanning/) 
-- [Part2]()
-- [Part3]()
+- [Part1: DPP Terminologies and PDM Overview](https://blogs.sap.com/2023/03/18/sapcap-win-customer-trust-using-data-privacy-and-protection-services-on-btp-part-1/) 
+- [Part2: Personal Data Annotations in CAP and Integration with PDM](https://blogs.sap.com/2023/03/18/sapcap-win-customer-trust-using-data-privacy-and-protection-services-on-btp-part-2/)
+- [Part3: Explore PDM Application features](https://blogs.sap.com/2023/03/18/sapcap-win-customer-trust-using-data-privacy-and-protection-services-on-btp-part-3/)
+
 
 
 ## Getting Started
