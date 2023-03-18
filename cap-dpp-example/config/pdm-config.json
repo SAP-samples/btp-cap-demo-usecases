@@ -1,0 +1,18 @@
+{
+    "fullyQualifiedApplicationName": "cap-dpp-example-pdm",
+    "fullyQualifiedModuleName": "cap-dpp-example-srv",
+    "applicationTitle": "DPP GameShop",
+    "applicationTitleKey":"DppGameShop",
+    "applicationURL": "https://tfe-dpp-dev-vud8raks-dev-cap-dpp-example-srv.cfapps.us10.hana.ondemand.com",
+    "endPoints": [
+        {
+            "type": "odatav4",
+            "serviceName": "cap-dpp-example-service",
+            "serviceTitle": "DppService GameSHop",
+            "serviceTitleKey": "DppServiceGameShop",
+            "serviceURI": "pdm",
+            "hasGdprV4Annotations": true,
+            "cacheControl": "no-cache"
+        }
+    ]
+}

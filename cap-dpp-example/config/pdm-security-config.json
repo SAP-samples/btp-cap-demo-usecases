@@ -1,0 +1,10 @@
+{
+    "xs-security": {
+        "xsappname": "cap-dpp-example",
+        "authorities": [
+            "$ACCEPT_GRANTED_AUTHORITIES"
+        ]
+    },
+    "fullyQualifiedApplicationName": "cap-dpp-example-pdm",
+    "appConsentServiceEnabled": true
+}

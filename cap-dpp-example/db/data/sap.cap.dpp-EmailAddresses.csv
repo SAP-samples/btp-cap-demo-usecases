@@ -1,0 +1,5 @@
+ID;createdAt;createdBy;modifiedAt;modifiedBy;customer_ID;emailType_id;emailAddress
+54e8a9cd-5c27-4161-b01c-aeec66ee3c2c;2023-02-04T14:49:50.056Z;risk.manager@tester.sap.com;2023-02-04T14:50:01.799Z;risk.manager@tester.sap.com;ca896642-5413-4c9c-86bf-c72d7b7da811;4;sheldon.cooper@bbt.com
+c03808c3-5577-48bb-83bc-5ec0f1386fe7;2023-02-04T14:48:12.186Z;risk.manager@tester.sap.com;2023-02-04T14:48:25.755Z;risk.manager@tester.sap.com;4b2d116a-381c-4ae0-ad3a-c34ca760e793;1;rohit.sharma@cricket.com
+d1930672-e737-4651-9522-bb6fc9383889;2023-02-04T14:49:05.971Z;risk.manager@tester.sap.com;2023-02-04T14:49:16.961Z;risk.manager@tester.sap.com;5abf9ee3-596d-4cb9-b2be-efaa8e99b0c7;4;leonard.hoftstadter@bbt.com
+daeba3dc-4e0e-41dd-a4f7-a038983ca802;2023-02-04T14:49:32.994Z;risk.manager@tester.sap.com;2023-02-04T14:49:41.649Z;risk.manager@tester.sap.com;c7efafdb-9689-444b-af0f-d4f69abc190e;2;virat.kohli@gmail.com

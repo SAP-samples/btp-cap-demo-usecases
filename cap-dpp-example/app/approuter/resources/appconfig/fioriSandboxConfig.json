@@ -1,0 +1,96 @@
+{
+    "bootstrapPlugins": {},
+    "services": {
+        "LaunchPage": {
+            "adapter": {
+                "config": {
+                    "catalogs": [],
+                    "groups": [
+                        {
+                            "id": "MyHome",
+                            "title": "Home",
+                            "isPreset": false,
+                            "isVisible": true,
+                            "isGroupLocked": false,
+                            "tiles": []
+                        },
+                        {
+                            "id": "GameShopAdmin",
+                            "title": "Game Shop",
+                            "isPreset": false,
+                            "isVisible": true,
+                            "isGroupLocked": false,
+                            "tiles": [    
+                                {
+                                    "id": "sap.cap.dpp.app.customers-sap-cap-dpp-app-customers-inbound",
+                                    "properties": {
+                                        "targetURL": "#DPP-ManageCustomers",
+                                        "title": "Manage Customers",
+                                        "subtitle": "modify customers",
+                                        "icon": "sap-icon://action-settings"
+                                    },
+                                    "tileType": "sap.ushell.ui.tile.StaticTile"
+                                },                            
+                                {
+                                    "id": "sap.cap.dpp.ui.orders-sap-cap-dpp-ui-orders-inbound",
+                                    "properties": {
+                                        "targetURL": "#DPP-ManageOrders",
+                                        "title": "Manage Orders",
+                                        "subtitle": "modify orders",
+                                        "icon": "sap-icon://action"
+                                    },
+                                    "tileType": "sap.ushell.ui.tile.StaticTile"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "NavTargetResolution": {
+            "config": {
+                "enableClientSideTargetResolution": true
+            }
+        },
+        "ClientSideTargetResolution": {
+            "adapter": {
+                "config": {
+                    "inbounds": {
+                        "sap.cap.dpp.app.customers-sap-cap-dpp-app-customers-inbound": {
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "semanticObject": "DPP",
+                            "action": "ManageCustomers",
+                            "title": "Manage Customers",
+                            "subTitle": "modify customers",
+                            "icon": "",
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=sap.cap.dpp.app.customers",
+                                "url": "/sapcapdppappcustomers/"
+                            }
+                        },
+                        "sap.cap.dpp.ui.orders-sap-cap-dpp-ui-orders-inbound": {
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "semanticObject": "DPP",
+                            "action": "ManageOrders",
+                            "title": "Manage Orders",
+                            "subTitle": "modify orders",
+                            "icon": "",
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=sap.cap.dpp.ui.orders",
+                                "url": "/sapcapdppuiorders/"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

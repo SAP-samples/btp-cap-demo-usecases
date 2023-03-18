@@ -1,0 +1,37 @@
+{
+  "welcomeFile": "/resources/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/resources/(.*)$",
+      "target": "/$1",
+      "localDir": "resources",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/appconfig/(.*)$",
+      "target": "/appconfig/$1",
+      "localDir": "resources",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/sapcapdppappcustomers/(.*)$",
+      "target": "/sapcapdppappcustomers/$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/sapcapdppuiorders/(.*)$",
+      "target": "/sapcapdppuiorders/$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "$1",
+      "destination": "sap-cap-dpp-srv",
+      "authenticationType": "xsuaa",
+      "csrfProtection": true
+    }
+  ]
+}

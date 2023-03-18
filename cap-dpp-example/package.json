@@ -1,0 +1,75 @@
+{
+    "name": "cap-dpp-example",
+    "version": "1.0.0",
+    "description": "DPP Example with CAP",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/audit-logging": "^5.7.0",
+        "@sap/cds": "^6",
+        "@sap/xssec": "^3",
+        "express": "^4",
+        "hdb": "^0.19.0",
+        "passport": "^0"
+    },
+    "devDependencies": {
+        "@sap/ux-specification": "^1.102.15",
+        "rimraf": "^3.0.2",
+        "sqlite3": "^5.0.4"
+    },
+    "scripts": {
+        "start": "cds run",
+        "undeploy": "cf undeploy cap-dpp-example --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "clean": "rimraf node_modules dbsrv-build app-build mta_archives app/customers/dist app/orders/dist app/approuter/node_modules app/customers/node_modules app/orders/node_modules",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    },
+    "engines": {
+        "node": "^16.15"
+    },
+    "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+            "es2020": true,
+            "node": true,
+            "jest": true,
+            "mocha": true
+        },
+        "globals": {
+            "SELECT": true,
+            "INSERT": true,
+            "UPDATE": true,
+            "DELETE": true,
+            "CREATE": true,
+            "DROP": true,
+            "CDL": true,
+            "CQL": true,
+            "CXL": true,
+            "cds": true
+        },
+        "rules": {
+            "no-console": "off",
+            "require-atomic-updates": "off"
+        }
+    },
+    "cds": {
+        "requires": {
+            "db": {
+                "kind": "sql"
+            },
+            "[production]": {
+                "auth": {
+                    "kind": "xsuaa"
+                },
+                "db": {
+                    "kind": "hana-cloud"
+                }
+            }
+        }
+    },
+    "sapux": [
+        "app/customers",
+        "app/orders"
+    ]
+}

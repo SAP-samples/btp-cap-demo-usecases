@@ -1,0 +1,34 @@
+{
+    "tenant-mode":"dedicated",
+    "xsappname": "cap-dpp-example",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.GameShopAdmin",
+            "description": "GameShopAdmin"
+        },
+        {
+            "name": "$XSAPPNAME.GameShopUser",
+            "description": "GameShopUser"
+        },
+        {
+            "name": "$XSAPPNAME.PersonalDataManagerUser",
+            "description": "Authority for Personal Data Manager",
+            "grant-as-authority-to-apps": ["$XSSERVICENAME(cap-dpp-example-pdm)"]
+        }
+    ],
+    "attributes": [],
+    "role-templates": [
+        {
+            "name": "GameShopAdmin",
+            "description": "generated",
+            "scope-references": ["$XSAPPNAME.GameShopAdmin"],
+            "attribute-references": []
+        },
+        {
+            "name": "GameShopUser",
+            "description": "generated",
+            "scope-references": ["$XSAPPNAME.GameShopUser"],
+            "attribute-references": []
+        }
+    ]
+}

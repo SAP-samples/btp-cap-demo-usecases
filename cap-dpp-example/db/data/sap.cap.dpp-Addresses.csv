@@ -1,0 +1,9 @@
+ID;createdAt;createdBy;modifiedAt;modifiedBy;customer_ID;type_id;state;street;town;country_code;someOtherField
+1b80b9e2-223b-4f86-a61c-47a08162e2a6;2023-01-25T14:33:00.575Z;anonymous;2023-01-25T14:33:00.575Z;anonymous;c7efafdb-9689-444b-af0f-d4f69abc190e;1;Maharastra;Churchgate;Mumbai;IND;Floor 4
+2524b602-7618-4ff3-944e-9c482b043e12;2023-01-25T14:34:38.549Z;anonymous;2023-01-25T14:34:38.549Z;anonymous;4b2d116a-381c-4ae0-ad3a-c34ca760e793;3;Maharastra;Bazar Road;Mumbai;IND;Floor 4
+4299bacc-298e-4167-bb46-369b12eac721;2023-01-25T14:34:38.549Z;anonymous;2023-01-25T14:34:38.549Z;anonymous;4b2d116a-381c-4ae0-ad3a-c34ca760e793;2;Maharastra;MG Road;Mumbai;IND;Floor 29
+4549639a-43f0-40fe-b1fb-a2a9e947e907;2023-01-25T14:25:11.365Z;anonymous;2023-01-25T14:25:11.365Z;anonymous;5abf9ee3-596d-4cb9-b2be-efaa8e99b0c7;3;California;California Institute of Technology;null;USA;1001
+7d082559-edcf-4c63-b8bd-de8832c45063;2023-01-25T14:21:27.830Z;anonymous;2023-01-25T14:21:27.830Z;anonymous;ca896642-5413-4c9c-86bf-c72d7b7da811;2;California;North Los Robles Avenue;Pasadena;USA;2311
+8394674d-e7f1-4ea9-bec7-c5791e9ca551;2023-01-25T14:25:11.365Z;anonymous;2023-01-25T14:25:11.365Z;anonymous;5abf9ee3-596d-4cb9-b2be-efaa8e99b0c7;1;California;Los Robles Avenue;Pasadena;USA;4A
+8adc5ba9-c65f-4f67-bc1c-58fa86d2118f;2023-01-25T14:33:00.575Z;anonymous;2023-01-25T14:33:00.575Z;anonymous;c7efafdb-9689-444b-af0f-d4f69abc190e;2;Maharastra;Worli's Omkar;Mumbai;IND;Floor 35
+c0512022-a47b-40f2-b371-220bc75c412b;2023-01-25T14:21:27.830Z;anonymous;2023-01-25T14:21:27.830Z;anonymous;ca896642-5413-4c9c-86bf-c72d7b7da811;1;California;California Institute of Technology;null;USA;4A
