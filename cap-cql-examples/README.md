@@ -1,5 +1,6 @@
 
-## Notes for Blog Post    
+## Blog Post      
+For detailed info, refer the blog [here](https://blogs.sap.com/2023/05/15/sapcap-understanding-cql-queries-node.js/) 
 <br />
 
 ## **_Introduction_**

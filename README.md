@@ -33,6 +33,13 @@ and code base can be found [here](./cap-dpp-example/).
 <br />
 <br />
 
+### _**[UseCase-4] CAP : Understanding CQL Queries (Node.js)**_
+This use case provides insights into CQL queries in the SAP CAP framework, offering readers a better understanding of how to utilize CQL queries with Node.js for efficient data retrieval and manipulation.
+
+For more info, refer the blog [here](https://blogs.sap.com/2023/05/15/sapcap-understanding-cql-queries-node.js/) and relevant code base can be found [here](./cap-cql-examples/).
+<br />
+<br />
+
 ## Known Issues
 No known issues.
 
