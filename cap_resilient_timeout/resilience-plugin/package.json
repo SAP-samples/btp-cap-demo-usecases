@@ -1,0 +1,16 @@
+{
+  "name": "resilience-plugin",
+  "version": "1.0.0",
+  "description": "Resilience Plugin(s)",
+  "main": "cds-plugin.js",
+  "scripts": {
+    "test": "node cds-plugin.js"
+  },
+  "keywords": [
+    "cap",
+    "cds-plugin",
+    "resilience"
+  ],
+  "author": "Ajit Kumar Panda",
+  "license": "ISC"
+}

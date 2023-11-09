@@ -40,6 +40,13 @@ For more info, refer the blog [here](https://blogs.sap.com/2023/05/15/sapcap-und
 <br />
 <br />
 
+### _**[UseCase-5] #SAPCAP: Resilience Pattern – Timeouts using CDS Middleware and Plugin Approach**_
+This usecase is an showcase for resilience pattern called timeouts within the context of developing applications on BTP using the Cloud Application Programming Model (CAP)
+
+For more info, refer the blog [here](https://blogs.sap.com/2023/11/09/sapcap-resilience-pattern-timeouts-using-cds-middleware-and-plugin-approach/) and relevant code base can be found [here](./cap_resilient_timeout/).
+<br />
+<br />
+
 ## Known Issues
 No known issues.
 

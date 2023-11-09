@@ -1,0 +1,30 @@
+{
+  "name": "cap_resilient_timeout",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/resilience": "^3.6.0",
+    "@sap/cds": "^7",
+    "express": "^4",
+    "resilience-plugin": "*",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3",
+    "passport": "^0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "workspaces": ["resilience-plugin"],
+  "cds": {
+    "requires": {
+      "db": "sqlite",
+      "auth": "mocked"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+### Wait=TRUE, Timeout Happens
+GET http://localhost:4004/odata/v4/my/getData(wait=true)
+
+### Wait=FALSE, Response should be received
+GET http://localhost:4004/odata/v4/my/getData(wait=false)
