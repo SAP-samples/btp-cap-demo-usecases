@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-cap-demo-usecases)](https://api.reuse.software/info/github.com/SAP-samples/btp-cap-demo-usecases)
+
 # SAP BTP CAP Demo Use Cases
 This repository includes demo use cases built using SAP Cloud Application Programming Model (CAP) with different SAP BTP services.
 
