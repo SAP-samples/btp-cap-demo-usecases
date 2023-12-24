@@ -1,0 +1,31 @@
+{
+  "name": "cap-fe-lr-table-views",
+  "version": "1.0.0",
+  "description": "Fiori Elements - List Report - Tables Examples",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-ui01": "cds watch --open ui01/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-ui02": "cds watch --open ui02/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-ui03": "cds watch --open ui03/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-ui04": "cds watch --open ui04/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-ui05": "cds watch --open ui05/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/ui01",
+    "app/ui02",
+    "app/ui03",
+    "app/ui04",
+    "app/ui05"
+  ]
+}

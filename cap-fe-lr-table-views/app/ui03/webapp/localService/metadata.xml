@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Aggregation.V1.xml">
+        <edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="cap_fe_lr_table_views_service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Orders" EntityType="cap_fe_lr_table_views_service.Orders">
+                    <NavigationPropertyBinding Path="type" Target="OrderTypes"/>
+                    <NavigationPropertyBinding Path="items" Target="OrderItems"/>
+                    <NavigationPropertyBinding Path="customer" Target="Customers"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="Orders"/>
+                </EntitySet>
+                <EntitySet Name="OrderItems" EntityType="cap_fe_lr_table_views_service.OrderItems">
+                    <NavigationPropertyBinding Path="order" Target="Orders"/>
+                    <NavigationPropertyBinding Path="product" Target="Products"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="OrderItems"/>
+                </EntitySet>
+                <EntitySet Name="OrderTypes" EntityType="cap_fe_lr_table_views_service.OrderTypes">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="OrderTypes"/>
+                </EntitySet>
+                <EntitySet Name="Customers" EntityType="cap_fe_lr_table_views_service.Customers">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="Customers"/>
+                </EntitySet>
+                <EntitySet Name="Products" EntityType="cap_fe_lr_table_views_service.Products"/>
+                <EntitySet Name="ItemTotals" EntityType="cap_fe_lr_table_views_service.ItemTotals"/>
+                <EntitySet Name="CustomerTotals" EntityType="cap_fe_lr_table_views_service.CustomerTotals"/>
+            </EntityContainer>
+            <EntityType Name="Orders">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="descr" Type="Edm.String" MaxLength="100"/>
+                <NavigationProperty Name="type" Type="cap_fe_lr_table_views_service.OrderTypes">
+                    <ReferentialConstraint Property="type_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="type_ID" Type="Edm.String" MaxLength="2"/>
+                <NavigationProperty Name="items" Type="Collection(cap_fe_lr_table_views_service.OrderItems)" Partner="order">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <Property Name="totalamount" Type="Edm.Decimal" Scale="2" Precision="10"/>
+                <NavigationProperty Name="customer" Type="cap_fe_lr_table_views_service.Customers">
+                    <ReferentialConstraint Property="customer_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="customer_ID" Type="Edm.Int32"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="cap_fe_lr_table_views_service.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="cap_fe_lr_table_views_service.Orders"/>
+            </EntityType>
+            <EntityType Name="OrderItems">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="order" Type="cap_fe_lr_table_views_service.Orders" Partner="items">
+                    <ReferentialConstraint Property="order_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="order_ID" Type="Edm.Int32"/>
+                <NavigationProperty Name="product" Type="cap_fe_lr_table_views_service.Products">
+                    <ReferentialConstraint Property="product_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="product_ID" Type="Edm.Int32"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="cap_fe_lr_table_views_service.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="cap_fe_lr_table_views_service.OrderItems"/>
+            </EntityType>
+            <EntityType Name="OrderTypes">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="2" Nullable="false"/>
+                <Property Name="descr" Type="Edm.String" MaxLength="100"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="cap_fe_lr_table_views_service.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="cap_fe_lr_table_views_service.OrderTypes"/>
+            </EntityType>
+            <EntityType Name="Customers">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="name" Type="Edm.String" MaxLength="200"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="cap_fe_lr_table_views_service.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="cap_fe_lr_table_views_service.Customers"/>
+            </EntityType>
+            <EntityType Name="Products">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="name" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityType Name="ItemTotals">
+                <Property Name="ID" Type="Edm.Int32"/>
+                <Property Name="name" Type="Edm.String" MaxLength="100"/>
+                <Property Name="orderamount" Type="Edm.Decimal" Scale="2" Precision="10"/>
+            </EntityType>
+            <EntityType Name="CustomerTotals">
+                <Property Name="ID" Type="Edm.Int32"/>
+                <Property Name="name" Type="Edm.String" MaxLength="200"/>
+                <Property Name="amount" Type="Edm.Decimal" Scale="2" Precision="10"/>
+            </EntityType>
+            <EntityType Name="DraftAdministrativeData">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="InProcessByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean"/>
+            </EntityType>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.Orders"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.Orders"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.OrderItems"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.OrderItems"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.OrderTypes"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.OrderTypes"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.Customers"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.Customers"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.Orders"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.Orders"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.OrderTypes"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.OrderTypes"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.Customers"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.Customers"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.Orders"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.Orders"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.OrderTypes"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.OrderTypes"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="cap_fe_lr_table_views_service.Customers"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="cap_fe_lr_table_views_service.Customers"/>
+            </Action>
+            <Annotations Target="cap_fe_lr_table_views_service.Orders">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record Type="Aggregation.ApplySupportedType">
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                                <String>search</String>
+                                <String>concat</String>
+                                <String>skip</String>
+                                <String>orderby</String>
+                                <String>top</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="Aggregation.RollupType/None"/>
+                        <PropertyValue Property="From" Bool="false"/>
+                        <PropertyValue Property="GroupableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>descr</PropertyPath>
+                                <PropertyPath>customer_ID</PropertyPath>
+                                <PropertyPath>type_ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="AggregatableProperties">
+                            <Collection>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="totalamount"/>
+                                    <PropertyValue Property="SupportedAggregationMethods">
+                                        <Collection>
+                                            <String>sum</String>
+                                            <String>max</String>
+                                            <String>min</String>
+                                            <String>average</String>
+                                        </Collection>
+                                    </PropertyValue>
+                                    <PropertyValue Property="RecommendedAggregationMethod" String="sum"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.EntityContainer/Orders">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record Type="Aggregation.ApplySupportedType">
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                                <String>search</String>
+                                <String>concat</String>
+                                <String>skip</String>
+                                <String>orderby</String>
+                                <String>top</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="Aggregation.RollupType/None"/>
+                        <PropertyValue Property="From" Bool="false"/>
+                        <PropertyValue Property="GroupableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>descr</PropertyPath>
+                                <PropertyPath>customer_ID</PropertyPath>
+                                <PropertyPath>type_ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="AggregatableProperties">
+                            <Collection>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="totalamount"/>
+                                    <PropertyValue Property="SupportedAggregationMethods">
+                                        <Collection>
+                                            <String>sum</String>
+                                            <String>max</String>
+                                            <String>min</String>
+                                            <String>average</String>
+                                        </Collection>
+                                    </PropertyValue>
+                                    <PropertyValue Property="RecommendedAggregationMethod" String="sum"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="cap_fe_lr_table_views_service.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="cap_fe_lr_table_views_service.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="cap_fe_lr_table_views_service.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.Orders/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.Orders/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.Orders/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.Orders/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.EntityContainer/OrderItems">
+                <Annotation Term="Common.DraftNode">
+                    <Record Type="Common.DraftNodeType">
+                        <PropertyValue Property="PreparationAction" String="cap_fe_lr_table_views_service.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderItems/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderItems/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderItems/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderItems/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.EntityContainer/OrderTypes">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="cap_fe_lr_table_views_service.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="cap_fe_lr_table_views_service.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="cap_fe_lr_table_views_service.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderTypes/ID">
+                <Annotation Term="Core.Description" String="Type Id"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderTypes/descr">
+                <Annotation Term="Core.Description" String="Type Description"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderTypes/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderTypes/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderTypes/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.OrderTypes/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.EntityContainer/Customers">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="cap_fe_lr_table_views_service.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="cap_fe_lr_table_views_service.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="cap_fe_lr_table_views_service.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.Customers/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.Customers/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.Customers/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.Customers/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.EntityContainer/ItemTotals">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.ItemTotals/orderamount">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.CustomerTotals">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record Type="Aggregation.ApplySupportedType">
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                                <String>search</String>
+                                <String>concat</String>
+                                <String>skip</String>
+                                <String>orderby</String>
+                                <String>top</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="Aggregation.RollupType/None"/>
+                        <PropertyValue Property="From" Bool="false"/>
+                        <PropertyValue Property="GroupableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>name</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="AggregatableProperties">
+                            <Collection>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="amount"/>
+                                    <PropertyValue Property="SupportedAggregationMethods">
+                                        <Collection>
+                                            <String>sum</String>
+                                            <String>max</String>
+                                            <String>min</String>
+                                        </Collection>
+                                    </PropertyValue>
+                                    <PropertyValue Property="RecommendedAggregationMethod" String="sum"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.EntityContainer/CustomerTotals">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record Type="Aggregation.ApplySupportedType">
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                                <String>search</String>
+                                <String>concat</String>
+                                <String>skip</String>
+                                <String>orderby</String>
+                                <String>top</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="Aggregation.RollupType/None"/>
+                        <PropertyValue Property="From" Bool="false"/>
+                        <PropertyValue Property="GroupableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>name</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="AggregatableProperties">
+                            <Collection>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="amount"/>
+                                    <PropertyValue Property="SupportedAggregationMethods">
+                                        <Collection>
+                                            <String>sum</String>
+                                            <String>max</String>
+                                            <String>min</String>
+                                        </Collection>
+                                    </PropertyValue>
+                                    <PropertyValue Property="RecommendedAggregationMethod" String="sum"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.CustomerTotals/amount">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData">
+                <Annotation Term="Common.Label" String="{i18n>Draft_DraftAdministrativeData}"/>
+                </Annotations>
+                <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData/DraftUUID">
+                    <Annotation Term="UI.Hidden" Bool="true"/>
+                    <Annotation Term="Common.Label" String="{i18n>Draft_DraftUUID}"/>
+                    </Annotations>
+                    <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData/CreationDateTime">
+                        <Annotation Term="Common.Label" String="{i18n>Draft_CreationDateTime}"/>
+                        </Annotations>
+                        <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData/CreatedByUser">
+                            <Annotation Term="Common.Label" String="{i18n>Draft_CreatedByUser}"/>
+                            </Annotations>
+                            <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData/DraftIsCreatedByMe">
+                                <Annotation Term="UI.Hidden" Bool="true"/>
+                                <Annotation Term="Common.Label" String="{i18n>Draft_DraftIsCreatedByMe}"/>
+                                </Annotations>
+                                <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData/LastChangeDateTime">
+                                    <Annotation Term="Common.Label" String="{i18n>Draft_LastChangeDateTime}"/>
+                                    </Annotations>
+                                    <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData/LastChangedByUser">
+                                        <Annotation Term="Common.Label" String="{i18n>Draft_LastChangedByUser}"/>
+                                        </Annotations>
+                                        <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData/InProcessByUser">
+                                            <Annotation Term="Common.Label" String="{i18n>Draft_InProcessByUser}"/>
+                                            </Annotations>
+                                            <Annotations Target="cap_fe_lr_table_views_service.DraftAdministrativeData/DraftIsProcessedByMe">
+                                                <Annotation Term="UI.Hidden" Bool="true"/>
+                                                <Annotation Term="Common.Label" String="{i18n>Draft_DraftIsProcessedByMe}"/>
+                                                </Annotations>
+                                            </Schema>
+                                        </edmx:DataServices>
+                                    </edmx:Edmx>
