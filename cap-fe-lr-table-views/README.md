@@ -1,8 +1,10 @@
-# Getting Started
+## Introduction
 
-Welcome to your new project.
+This repository is an showcase for presenting table in a List Report with different settings using SAP Cloud Application Programming Model (CAP) and SAP Fiori Elements.
 
-It contains these folders and files, following our recommended project layout:
+[CAP with Fiori Elements: Configure Multiple Views on List Report Tables](https://blogs.sap.com/2023/12/25/cap-with-fiori-elements-configure-multiple-views-on-list-report-tables/)
+
+## Getting Started
 
 File or Folder | Purpose
 ---------|----------
@@ -13,11 +15,9 @@ File or Folder | Purpose
 `readme.md` | this getting started guide
 
 
-## Next Steps
+## Local Run
 
-- Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+- Open cap_resilient_terminal folder in a new terminal and run `cds watch` to start the cap application. 
 
 
 ## Learn More

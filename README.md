@@ -49,6 +49,13 @@ For more info, refer the blog [here](https://blogs.sap.com/2023/11/09/sapcap-res
 <br />
 <br />
 
+### _**[UseCase-6] CAP with Fiori Elements: Configure Multiple Views on List Report Tables**_
+This usecase is an showcase for presenting table in a List Report with different settings using SAP Cloud Application Programming Model (CAP) and SAP Fiori Elements.
+
+For more info, refer the blog [here](https://blogs.sap.com/2023/12/25/cap-with-fiori-elements-configure-multiple-views-on-list-report-tables/) and relevant code base can be found [here](./cap-fe-lr-table-views/).
+<br />
+<br />
+
 ## Known Issues
 No known issues.
 
