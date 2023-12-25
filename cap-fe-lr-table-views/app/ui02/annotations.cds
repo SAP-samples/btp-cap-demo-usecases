@@ -112,9 +112,11 @@ annotate service.Orders with @(
         },
     }
 );
+
 annotate service.Orders with {
-    type @Common.Label : 'Order Type'
+    type @Common.Label: 'Order Type'
 };
+
 annotate service.Orders with {
-    customer @Common.Label : 'Customer'
+    customer @Common.Label: 'Customer'
 };

@@ -123,13 +123,11 @@
                                 "paths": [
                                     {
                                         "key": "tab0",
-                                        "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#SPVSO",
-                                        "entitySet": "Orders"
+                                        "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#SPVSO"
                                     },
                                     {
                                         "key": "tab1",
-                                        "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#SPVRO",
-                                        "entitySet": "Orders"
+                                        "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#SPVRO"
                                     }
                                 ],
                                 "showCounts": true
