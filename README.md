@@ -54,6 +54,17 @@ This usecase is an showcase for presenting table in a List Report with different
 
 For more info, refer the blog [here](https://blogs.sap.com/2023/12/25/cap-with-fiori-elements-configure-multiple-views-on-list-report-tables/) and relevant code base can be found [here](./cap-fe-lr-table-views/).
 <br />
+<br />  
+
+
+### _**[UseCase-7] CAP with Fiori Elements: Actions on List Report / Object Page using Annotations**_
+This usecase is an showcase for  exploring actions on List Report and Object Page of SAP Fiori Elements with SAP Cloud Application Programming Model (CAP) using annotations only.
+
+For more info, refer the following blogs:
+- [CAP with Fiori Elements: Actions on List Report / Object Page using Annotations – Part1](https://blogs.sap.com/2023/12/31/cap-with-fiori-elements-actions-on-list-report-object-page-using-annotations-part1/)
+
+- [CAP with Fiori Elements: Actions on List Report / Object Page using Annotations – Part2](https://blogs.sap.com/2023/12/31/cap-with-fiori-elements-actions-on-list-report-object-page-using-annotations-part2/)
+<br />
 <br />
 
 ## Known Issues

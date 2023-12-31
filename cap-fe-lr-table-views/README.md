@@ -17,7 +17,9 @@ File or Folder | Purpose
 
 ## Local Run
 
-- Open cap_resilient_terminal folder in a new terminal and run `cds watch` to start the cap application. 
+- Clone this git repo and Open cap-fe-lr-table-views folder in a new terminal 
+- install dependencies by running npm install
+- run `cds watch` to start the cap application. 
 
 
 ## Learn More
