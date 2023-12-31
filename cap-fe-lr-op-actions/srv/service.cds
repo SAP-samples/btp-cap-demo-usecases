@@ -101,5 +101,7 @@ service cap_fe_lr_op_actions_service {
   
   action sua_action_critical();
 
+  action msg_trigger();
+
 
 }

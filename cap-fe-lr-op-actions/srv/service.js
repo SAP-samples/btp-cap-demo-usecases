@@ -17,10 +17,30 @@ module.exports = cds.service.impl(async function (srv) {
         }
     );
 
+    srv.on("msg_trigger",async (req) => {
+      req._.odataRes.setHeader('sap-messages', JSON.stringify([
+        { 
+          "code" : "500",
+          "message" : "info: messages trigger action called!",
+          "numericSeverity" : 2                            
+        },
+        {
+          "code" : "504",
+          "message" : "This can only be triggered for draft data",
+          "numericSeverity" : 3
+        },
+        {
+          "code" : "504",
+          "message" : "Error happened! Contact your IT Admin",
+          "numericSeverity" : 4
+        }
+      ]));
+    });
+
     /*---------->> Handlers for Bound Global Acions <<----------*/
     srv.on("ga_op_calculate", async (req) => {
         console.log("🚀 [file: service.js] [ga_op_calculate] ~ req.params:", req.params);
-        req.notify(`ga_op_calculate \n\n action triggered with context: \n\n ${JSON.stringify(req.params)}`);
+        req.info(`ga_op_calculate \n\n action triggered with context: \n\n ${JSON.stringify(req.params)}`);
     });
 
     /*---------->> Handlers for Bound Acions of Samples <<----------*/
@@ -50,7 +70,7 @@ module.exports = cds.service.impl(async function (srv) {
     /*---------->> Handlers for Determining Acions <<----------*/
     srv.on(["da_op_clearParymentAction"], async (req) => {
         console.log(`🚀 [file: service.js] [${req.event}] ~ req.params:`, req.params);
-        req.notify(`${req.event} \n\n inline action triggered with context: \n\n ${JSON.stringify(req.params)}`);
+        req.error(`${req.event} \n\n inline action triggered with context: \n\n ${JSON.stringify(req.params)}`);
     });
 
     srv.on(["getDefaults"], async (req) => {

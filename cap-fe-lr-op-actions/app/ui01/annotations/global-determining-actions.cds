@@ -16,6 +16,12 @@ annotate service.Roots with @(UI.Identification: [
         Label      : '(Unbound) Trigger Replication',
         Criticality: #Positive
     },
+    {
+        $Type      : 'UI.DataFieldForAction',
+        Action     : 'cap_fe_lr_op_actions_service.EntityContainer/msg_trigger',
+        Label      : 'Trigger Messages',
+        Criticality: #Positive
+    },
 /*-------------------------------------------*/
 /*-------->>[ Determining Actions ]<<--------*/
     {
