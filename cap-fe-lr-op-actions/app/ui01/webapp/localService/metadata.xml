@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="cap_fe_lr_op_actions_service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Roots" EntityType="cap_fe_lr_op_actions_service.Roots">
+                    <NavigationPropertyBinding Path="items" Target="Items"/>
+                </EntitySet>
+                <EntitySet Name="Items" EntityType="cap_fe_lr_op_actions_service.Items">
+                    <NavigationPropertyBinding Path="root" Target="Roots"/>
+                </EntitySet>
+                <EntitySet Name="Categories" EntityType="cap_fe_lr_op_actions_service.Categories"/>
+                <EntitySet Name="Samples" EntityType="cap_fe_lr_op_actions_service.Samples"/>
+            </EntityContainer>
+            <EntityType Name="Roots">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int16" Nullable="false"/>
+                <Property Name="name" Type="Edm.String"/>
+                <Property Name="descr" Type="Edm.String"/>
+                <Property Name="totalAmount" Type="Edm.Int64"/>
+                <NavigationProperty Name="items" Type="Collection(cap_fe_lr_op_actions_service.Items)" Partner="root">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="Items">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int16" Nullable="false"/>
+                <Property Name="iname" Type="Edm.String"/>
+                <Property Name="idescr" Type="Edm.String"/>
+                <Property Name="itemAmount" Type="Edm.Int64"/>
+                <NavigationProperty Name="root" Type="cap_fe_lr_op_actions_service.Roots" Partner="items">
+                    <ReferentialConstraint Property="root_id" ReferencedProperty="id"/>
+                </NavigationProperty>
+                <Property Name="root_id" Type="Edm.Int16"/>
+            </EntityType>
+            <EntityType Name="Categories">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="descr" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityType Name="Samples">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int16" Nullable="false"/>
+                <Property Name="name" Type="Edm.String"/>
+                <Property Name="descr" Type="Edm.String"/>
+                <Property Name="amount" Type="Edm.Int64"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

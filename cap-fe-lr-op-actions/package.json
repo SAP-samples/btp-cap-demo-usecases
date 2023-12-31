@@ -1,0 +1,23 @@
+{
+  "name": "cap-fe-lr-op-actions",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-ui01": "cds watch --open ui01/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/ui01"
+  ]
+}

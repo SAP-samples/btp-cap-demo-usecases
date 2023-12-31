@@ -1,0 +1,10 @@
+id,iname,idescr,root_id,itemAmount,enableItem
+10,item10,10 items,100,200,true
+20,item20,20 items,100,300,false
+30,item30,30 items,100,500,true
+40,item10,10 items,101,500,true
+50,item20,20 items,101,1000,false
+60,item30,30 items,101,500,true
+70,item10,10 items,102,1200,false
+80,item20,20 items,102,750,true
+90,item30,30 items,102,1050,true
