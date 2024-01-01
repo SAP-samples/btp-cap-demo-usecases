@@ -1,8 +1,14 @@
-# Getting Started
+## Introduction
 
-Welcome to your new project.
+This repository is an showcase for  exploring actions on List Report and Object Page of SAP Fiori Elements with SAP Cloud Application Programming Model (CAP) using annotations only.
 
-It contains these folders and files, following our recommended project layout:
+More information is available on following blogs:
+
+- [CAP with Fiori Elements: Actions on List Report / Object Page using Annotations – Part1](https://blogs.sap.com/2023/12/31/cap-with-fiori-elements-actions-on-list-report-object-page-using-annotations-part1/)
+
+- [CAP with Fiori Elements: Actions on List Report / Object Page using Annotations – Part2](https://blogs.sap.com/2023/12/31/cap-with-fiori-elements-actions-on-list-report-object-page-using-annotations-part2/)
+
+## Getting Started
 
 File or Folder | Purpose
 ---------|----------
@@ -13,11 +19,11 @@ File or Folder | Purpose
 `readme.md` | this getting started guide
 
 
-## Next Steps
+## Local Run
 
-- Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+- Clone this git repo and Open cap-fe-lr-op-actions folder in a new terminal 
+- install dependencies by running npm install
+- run `cds watch` to start the cap application. 
 
 
 ## Learn More

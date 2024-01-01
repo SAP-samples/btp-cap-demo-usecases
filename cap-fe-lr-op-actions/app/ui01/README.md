@@ -1,31 +1,34 @@
-## Introduction
+## Application Details
+|               |
+| ------------- |
+|**Generation Date and Time**<br>Fri Dec 29 2023 10:05:40 GMT+0530 (India Standard Time)|
+|**App Generator**<br>@sap/generator-fiori-elements|
+|**App Generator Version**<br>1.11.0|
+|**Generation Platform**<br>Visual Studio Code|
+|**Template Used**<br>List Report Page V4|
+|**Service Type**<br>Local Cap|
+|**Service URL**<br>http://localhost:4004/service/cap_fe_lr_op_actions/
+|**Module Name**<br>ui01|
+|**Application Title**<br>Actions - UI01|
+|**Namespace**<br>cap.fe.lr.op.actions|
+|**UI5 Theme**<br>sap_horizon|
+|**UI5 Version**<br>1.120.3|
+|**Enable Code Assist Libraries**<br>False|
+|**Enable TypeScript**<br>False|
+|**Add Eslint configuration**<br>False|
+|**Main Entity**<br>Roots|
+|**Navigation Entity**<br>None|
 
-This repository is an showcase for  exploring actions on List Report and Object Page of SAP Fiori Elements with SAP Cloud Application Programming Model (CAP) using annotations only.
+## ui01
 
-More information is available on following blogs:
+Actions - UI01
 
-- [CAP with Fiori Elements: Actions on List Report / Object Page using Annotations – Part1](https://blogs.sap.com/2023/12/31/cap-with-fiori-elements-actions-on-list-report-object-page-using-annotations-part1/)
+### Starting the generated app
 
-- [CAP with Fiori Elements: Actions on List Report / Object Page using Annotations – Part2](https://blogs.sap.com/2023/12/31/cap-with-fiori-elements-actions-on-list-report-object-page-using-annotations-part2/)
+-   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply start your CAP project and navigate to the following location in your browser:
 
-## Getting Started
+http://localhost:4004/ui01/webapp/index.html
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+#### Pre-requisites:
 
-
-## Local Run
-
-- Clone this git repo and Open cap-fe-lr-op-actions folder in a new terminal 
-- install dependencies by running npm install
-- run `cds watch` to start the cap application. 
-
-
-## Learn More
-
-Learn more at https://cap.cloud.sap/docs/get-started/.
+1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
