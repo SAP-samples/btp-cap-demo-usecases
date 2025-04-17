@@ -18,7 +18,7 @@ module.exports = cds.service.impl(async function (srv) {
     );
 
     srv.on("msg_trigger",async (req) => {
-      req._.odataRes.setHeader('sap-messages', JSON.stringify([
+      req._.res.setHeader('sap-messages', JSON.stringify([
         { 
           "code" : "500",
           "message" : "info: messages trigger action called!",
