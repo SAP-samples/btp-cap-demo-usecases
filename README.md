@@ -26,7 +26,7 @@ This project demonstrates AI-powered development using Cline to rapidly build en
    - **cap-fiori.md**: SAP CAP and Fiori best practices for deterministic generation
    >Note: These are demo-focused rules. Production applications require comprehensive grounding rules.
 
-- **Important nodejs modules** Cline can install this automatically because of the rules, so you can skip them, but validate if there any issues with ui generation with these versions.
+- **Important nodejs packages** Cline can install this automatically because of the rules, so you can skip them, but validate if there any issues with ui generation with these versions.
    - **yo**: Version 4.3.1 (`npm install -g yo@4.3.1`)
    - **@sap/generator-fiori**: SAP Fiori generator (`npm install -g @sap/generator-fiori`)
 - Enable "use the browser" - for automatic browser UI testing. 
