@@ -1,0 +1,5 @@
+ID;incident_ID;text
+550e8400-e29b-41d4-a716-446655440201;550e8400-e29b-41d4-a716-446655440101;Initial investigation started - checking authentication service
+550e8400-e29b-41d4-a716-446655440202;550e8400-e29b-41d4-a716-446655440101;Found issue with LDAP connection - working on fix
+550e8400-e29b-41d4-a716-446655440203;550e8400-e29b-41d4-a716-446655440102;Performance analysis completed - identified database bottleneck
+550e8400-e29b-41d4-a716-446655440204;550e8400-e29b-41d4-a716-446655440102;Database optimization in progress

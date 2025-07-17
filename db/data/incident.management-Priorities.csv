@@ -1,0 +1,4 @@
+ID;code;name;description
+550e8400-e29b-41d4-a716-446655440001;HIGH;High;Critical incidents requiring immediate attention
+550e8400-e29b-41d4-a716-446655440002;MEDIUM;Medium;Important incidents that should be addressed soon
+550e8400-e29b-41d4-a716-446655440003;LOW;Low;Minor incidents that can be addressed when time permits

@@ -1,0 +1,28 @@
+{
+  "name": "cline_vibe",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^9",
+    "express": "^4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@cap-js/cds-types": "^0.12.0",
+    "@sap/eslint-plugin-cds": "^4",
+    "eslint": "^9"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-incident-management-ui": "cds watch --open incident-management-ui/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/incident-management-ui"
+  ]
+}
