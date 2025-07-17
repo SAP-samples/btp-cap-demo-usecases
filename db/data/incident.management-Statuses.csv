@@ -1,0 +1,5 @@
+ID;code;name;description
+550e8400-e29b-41d4-a716-446655440011;OPEN;Open;Newly created incident awaiting assignment
+550e8400-e29b-41d4-a716-446655440012;IN_PROGRESS;In Progress;Incident is being actively worked on
+550e8400-e29b-41d4-a716-446655440013;RESOLVED;Resolved;Incident has been fixed and awaiting verification
+550e8400-e29b-41d4-a716-446655440014;CLOSED;Closed;Incident has been completed and verified
