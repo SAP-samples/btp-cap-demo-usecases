@@ -7,6 +7,20 @@ This project demonstrates AI-powered development using Cline to rapidly build en
 ### Prerequisites
 - [Cline](https://docs.cline.bot/getting-started/for-new-coders#%F0%9F%9A%80-getting-started)
 - [SAP AI Core with Generative AI Hub](https://developers.sap.com/tutorials/ai-core-genaihub-provisioning.html)
+- **Configure Cline for SAP AI Core**
+  <details>
+  <summary>View configuration details</summary>
+  
+  Once you have your SAP AI Core service key, you need to configure the following settings in Cline:
+
+  - **API Provider**: Select `SAP AI Core`.
+  - **API Core Client ID**: Your client ID from the service key.
+  - **API Core Client Secret**: Your client secret from the service key.
+  - **AI Core Base URL**: The `AI_API_URL` from your service key.
+  - **AI Core Auth URL**: The `url` from your service key.
+  - **AI Core Resource Group**: The resource group you want to use.
+  - **Model**: The model you want to use (e.g., `anthropic--claude-4-sonnet`, `gemini-2.5-pro`, `gpt-4.1`). You must have a [deployment](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-deployment-for-generative-ai-model-in-sap-ai-core) for this model in SAP AI Core.
+  </details>
 - **Grounding Rules** The following rules need to be added in `.clinerules/`:
    - **prd rule.md**: Product Requirements Document generation with TDD approach. You can follow any other open-source projects as well.
    - **cap-fiori.md**: SAP CAP and Fiori best practices for deterministic generation
