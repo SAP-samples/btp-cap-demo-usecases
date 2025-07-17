@@ -1,0 +1,4 @@
+ID;title;description;priority_ID;status_ID
+550e8400-e29b-41d4-a716-446655440101;System Login Issue;Users unable to login to the main application;550e8400-e29b-41d4-a716-446655440001;550e8400-e29b-41d4-a716-446655440011
+550e8400-e29b-41d4-a716-446655440102;Report Generation Slow;Monthly reports taking too long to generate;550e8400-e29b-41d4-a716-446655440002;550e8400-e29b-41d4-a716-446655440012
+550e8400-e29b-41d4-a716-446655440103;UI Button Misalignment;Minor UI issue with button positioning;550e8400-e29b-41d4-a716-446655440003;550e8400-e29b-41d4-a716-446655440011
