@@ -5,8 +5,8 @@ This project demonstrates AI-powered development using Cline to rapidly build en
 ## 🚀 Quick Start
 
 ### Prerequisites
-- **Cline**: AI-powered code editor extension
-- **SAP AI Core**
+- [Cline](https://docs.cline.bot/getting-started/for-new-coders#%F0%9F%9A%80-getting-started)
+- [SAP AI Core with Generative AI Hub](https://developers.sap.com/tutorials/ai-core-genaihub-provisioning.html)
 - **Grounding Rules** The following rules need to be added in `.clinerules/`:
    - **prd rule.md**: Product Requirements Document generation with TDD approach. You can follow any other open-source projects as well.
    - **cap-fiori.md**: SAP CAP and Fiori best practices for deterministic generation
